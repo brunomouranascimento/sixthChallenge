@@ -72,7 +72,7 @@ struct MainSectionView: View {
                 NavigationLink(destination: MailView(navigationTitle: mailBox.name)) {
                     MailBoxRow(mailBox: mailBox, showArrow: true)
                 }
-                .navigationTitle("Voltar")
+                .navigationTitle("E-mails")
                 
             }
         } header: {
@@ -164,7 +164,7 @@ struct LastSyncView: View {
         VStack {
             HStack {
                 Spacer()
-                Text("Última sincronização em:")
+                Text("Sincronizado em:")
                 Text(date, formatter: dateFormatter)
                 Spacer()
             }
