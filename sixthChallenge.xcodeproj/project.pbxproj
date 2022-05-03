@@ -11,6 +11,7 @@
 		DB609D5A282160AD0001F6C4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB609D59282160AD0001F6C4 /* ContentView.swift */; };
 		DB609D5C282160B00001F6C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB609D5B282160B00001F6C4 /* Assets.xcassets */; };
 		DB609D5F282160B00001F6C4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB609D5E282160B00001F6C4 /* Preview Assets.xcassets */; };
+		DB609D67282167C90001F6C4 /* Mailbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB609D66282167C90001F6C4 /* Mailbox.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		DB609D59282160AD0001F6C4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DB609D5B282160B00001F6C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DB609D5E282160B00001F6C4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		DB609D66282167C90001F6C4 /* Mailbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mailbox.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +53,7 @@
 		DB609D56282160AD0001F6C4 /* sixthChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				DB609D65282167BA0001F6C4 /* Model */,
 				DB609D57282160AD0001F6C4 /* sixthChallengeApp.swift */,
 				DB609D59282160AD0001F6C4 /* ContentView.swift */,
 				DB609D5B282160B00001F6C4 /* Assets.xcassets */,
@@ -65,6 +68,14 @@
 				DB609D5E282160B00001F6C4 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		DB609D65282167BA0001F6C4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DB609D66282167C90001F6C4 /* Mailbox.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,6 +149,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB609D5A282160AD0001F6C4 /* ContentView.swift in Sources */,
+				DB609D67282167C90001F6C4 /* Mailbox.swift in Sources */,
 				DB609D58282160AD0001F6C4 /* sixthChallengeApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
