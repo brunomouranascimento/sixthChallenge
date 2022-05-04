@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct MailBoxRowView: View {
-    @State var mailBox: Mailbox
+    @StateObject var viewModel = HomeViewModel()
+    
+    var mailBox: Mailbox
     
     var body: some View {
         HStack {
@@ -36,6 +38,6 @@ struct MailBoxRowView: View {
 
 struct MailBoxRowView_Previews: PreviewProvider {
     static var previews: some View {
-        MailBoxRowView(mailBox: Mailbox.mainMockData.first!)
+        MailBoxRowView(mailBox: HomeViewModel().mainMockData.first!)
     }
 }

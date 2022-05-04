@@ -8,13 +8,14 @@
 import SwiftUI
 
 struct HomeView: View {
+    @StateObject var viewModel = HomeViewModel()
     @State private var orientation = UIDeviceOrientation.unknown
     
     var body: some View {
         NavigationView {
             List {
-                SectionView(mailBoxes: Mailbox.mainMockData, navigationTitle: "Todos os e-mails", mailBoxIcon: "tray.2", unreadEmails: "77", headerTitle: "E-mails", showAllEmails: true)
-                SectionView(mailBoxes: Mailbox.smartMockData, navigationTitle: "Todos os e-mails", mailBoxIcon: "tray.2", unreadEmails: "77", headerTitle: "Caixas inteligentes", showLastSync: true)
+                SectionView(mailBoxes: viewModel.mainMockData, navigationTitle: "Todos os e-mails", mailBoxIcon: "tray.2", unreadEmails: "77", headerTitle: "E-mails", showAllEmails: true)
+                SectionView(mailBoxes: viewModel.smartMockData, navigationTitle: "Todos os e-mails", mailBoxIcon: "tray.2", unreadEmails: "77", headerTitle: "Caixas inteligentes", showLastSync: true)
                 if UIDevice.current.userInterfaceIdiom == .pad {
                     CalendarView()
                 }
@@ -27,19 +28,6 @@ struct HomeView: View {
         }
     }
 }
-
-struct MailView: View {
-    var navigationTitle: String
-
-    var body: some View {
-        HStack {
-            Text(navigationTitle)
-        }
-        .navigationTitle(navigationTitle)
-        .navigationBarTitleDisplayMode(.inline)
-    }
-}
-
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {

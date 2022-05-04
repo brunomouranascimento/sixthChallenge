@@ -19,7 +19,7 @@ struct SectionView: View {
     var body: some View {
         Section {
             if showAllEmails! {
-                NavigationLink(destination: MailView(navigationTitle: navigationTitle)) {
+                NavigationLink(destination: MailListView(mailBoxName: navigationTitle)) {
                     HStack {
                         Image(systemName: mailBoxIcon)
                             .foregroundColor(.indigo)
@@ -34,7 +34,7 @@ struct SectionView: View {
                 }
             }
             ForEach(mailBoxes, id: \.id ) { mailBox in
-                NavigationLink(destination: MailView(navigationTitle: mailBox.name)) {
+                NavigationLink(destination: MailListView(mailBoxName: mailBox.name)) {
                     MailBoxRowView(mailBox: mailBox)
                 }
             }
@@ -63,7 +63,7 @@ struct SectionView: View {
 struct SectionView_Previews: PreviewProvider {
     static var previews: some View {
         List {
-            SectionView(mailBoxes: Mailbox.mainMockData, navigationTitle: "Todos os e-mails", mailBoxIcon: "tray.2", unreadEmails: "77", headerTitle: "E-mails", showAllEmails: true, showLastSync: true)
+            SectionView(mailBoxes: HomeViewModel().mainMockData, navigationTitle: "Todos os e-mails", mailBoxIcon: "tray.2", unreadEmails: "77", headerTitle: "E-mails", showAllEmails: true, showLastSync: true)
         }
     }
 }
