@@ -8,19 +8,29 @@
 
 /* Begin PBXBuildFile section */
 		DB609D58282160AD0001F6C4 /* sixthChallengeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB609D57282160AD0001F6C4 /* sixthChallengeApp.swift */; };
-		DB609D5A282160AD0001F6C4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB609D59282160AD0001F6C4 /* ContentView.swift */; };
 		DB609D5C282160B00001F6C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB609D5B282160B00001F6C4 /* Assets.xcassets */; };
 		DB609D5F282160B00001F6C4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB609D5E282160B00001F6C4 /* Preview Assets.xcassets */; };
 		DB609D67282167C90001F6C4 /* Mailbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB609D66282167C90001F6C4 /* Mailbox.swift */; };
+		DBCB48CE2822C49E0022BDC7 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCB48CD2822C49E0022BDC7 /* HomeView.swift */; };
+		DBCB48D22822C61E0022BDC7 /* MailBoxRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCB48D12822C61E0022BDC7 /* MailBoxRowView.swift */; };
+		DBCB48D52822C9E70022BDC7 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCB48D42822C9E70022BDC7 /* Extensions.swift */; };
+		DBCB48D72822CBB10022BDC7 /* SectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCB48D62822CBB10022BDC7 /* SectionView.swift */; };
+		DBCB48D92822D0480022BDC7 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCB48D82822D0480022BDC7 /* CalendarView.swift */; };
+		DBCB48DB2822D06A0022BDC7 /* LastSyncView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCB48DA2822D06A0022BDC7 /* LastSyncView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		DB609D54282160AD0001F6C4 /* sixthChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sixthChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB609D57282160AD0001F6C4 /* sixthChallengeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sixthChallengeApp.swift; sourceTree = "<group>"; };
-		DB609D59282160AD0001F6C4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DB609D5B282160B00001F6C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DB609D5E282160B00001F6C4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DB609D66282167C90001F6C4 /* Mailbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mailbox.swift; sourceTree = "<group>"; };
+		DBCB48CD2822C49E0022BDC7 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		DBCB48D12822C61E0022BDC7 /* MailBoxRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailBoxRowView.swift; sourceTree = "<group>"; };
+		DBCB48D42822C9E70022BDC7 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		DBCB48D62822CBB10022BDC7 /* SectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionView.swift; sourceTree = "<group>"; };
+		DBCB48D82822D0480022BDC7 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		DBCB48DA2822D06A0022BDC7 /* LastSyncView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastSyncView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,9 +63,10 @@
 		DB609D56282160AD0001F6C4 /* sixthChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				DBCB48D32822C9CB0022BDC7 /* Extensions */,
+				DBCB48C92822C3DD0022BDC7 /* View */,
 				DB609D65282167BA0001F6C4 /* Model */,
 				DB609D57282160AD0001F6C4 /* sixthChallengeApp.swift */,
-				DB609D59282160AD0001F6C4 /* ContentView.swift */,
 				DB609D5B282160B00001F6C4 /* Assets.xcassets */,
 				DB609D5D282160B00001F6C4 /* Preview Content */,
 			);
@@ -76,6 +87,50 @@
 				DB609D66282167C90001F6C4 /* Mailbox.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		DBCB48C92822C3DD0022BDC7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DBCB48CB2822C4760022BDC7 /* Shared */,
+				DBCB48CA2822C3F20022BDC7 /* Screens */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DBCB48CA2822C3F20022BDC7 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				DBCB48CC2822C4810022BDC7 /* Home */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		DBCB48CB2822C4760022BDC7 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				DBCB48D12822C61E0022BDC7 /* MailBoxRowView.swift */,
+				DBCB48D62822CBB10022BDC7 /* SectionView.swift */,
+				DBCB48D82822D0480022BDC7 /* CalendarView.swift */,
+				DBCB48DA2822D06A0022BDC7 /* LastSyncView.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		DBCB48CC2822C4810022BDC7 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				DBCB48CD2822C49E0022BDC7 /* HomeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		DBCB48D32822C9CB0022BDC7 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				DBCB48D42822C9E70022BDC7 /* Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,8 +203,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB609D5A282160AD0001F6C4 /* ContentView.swift in Sources */,
+				DBCB48D52822C9E70022BDC7 /* Extensions.swift in Sources */,
+				DBCB48DB2822D06A0022BDC7 /* LastSyncView.swift in Sources */,
+				DBCB48D92822D0480022BDC7 /* CalendarView.swift in Sources */,
+				DBCB48CE2822C49E0022BDC7 /* HomeView.swift in Sources */,
+				DBCB48D72822CBB10022BDC7 /* SectionView.swift in Sources */,
 				DB609D67282167C90001F6C4 /* Mailbox.swift in Sources */,
+				DBCB48D22822C61E0022BDC7 /* MailBoxRowView.swift in Sources */,
 				DB609D58282160AD0001F6C4 /* sixthChallengeApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

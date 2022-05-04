@@ -7,7 +7,10 @@
 
 import SwiftUI
 
+
 struct ContentView: View {
+    @State private var orientation = UIDeviceOrientation.unknown
+    
     var body: some View {
         NavigationView {
             List {
@@ -19,8 +22,42 @@ struct ContentView: View {
             }
             .navigationBarHidden(true)
         }
+        .switchStyle(if: UIDevice.current.userInterfaceIdiom == .pad && orientation.isLandscape)
+        .onRotate { newOrientation in
+                    orientation = newOrientation
+        }
     }
 }
+
+extension NavigationView {
+    @ViewBuilder
+    func switchStyle(if flag: Bool) -> some View {
+        if flag {
+            self.navigationViewStyle(DoubleColumnNavigationViewStyle())
+        } else {
+            self.navigationViewStyle(StackNavigationViewStyle())
+        }
+    }
+}
+
+struct DeviceRotationViewModifier: ViewModifier {
+    let action: (UIDeviceOrientation) -> Void
+ 
+    func body(content: Content) -> some View {
+        content
+            .onAppear()
+            .onReceive(NotificationCenter.default.publisher(for: UIDevice.orientationDidChangeNotification)) { _ in
+                action(UIDevice.current.orientation)
+            }
+    }
+}
+ 
+extension View {
+    func onRotate(perform action: @escaping (UIDeviceOrientation) -> Void) -> some View {
+        self.modifier(DeviceRotationViewModifier(action: action))
+    }
+}
+
 
 struct MailBoxRow: View {
     var mailBox: Mailbox
@@ -72,8 +109,6 @@ struct MainSectionView: View {
                 NavigationLink(destination: MailView(navigationTitle: mailBox.name)) {
                     MailBoxRow(mailBox: mailBox, showArrow: true)
                 }
-                .navigationTitle("E-mails")
-                
             }
         } header: {
             HStack {
@@ -88,6 +123,7 @@ struct MainSectionView: View {
             
         }
         .textCase(nil)
+        .navigationTitle("E-mails")
         
     }
 }
@@ -178,7 +214,7 @@ struct MailView: View {
     var navigationTitle: String
 
     var body: some View {
-        NavigationView {
+        HStack {
             Text(navigationTitle)
         }
         .navigationTitle(navigationTitle)
